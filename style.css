@@ -129,8 +129,8 @@ body {
   background: white;
   height: 1px;
   position: absolute;
-  top: 50%;
-  left: 6vh;
+  top: 60%;
+  left: 16vh;
   transform: translateY(-50%);
   transform-origin: 0% 50%;
   transition: transform 900ms ;
@@ -149,11 +149,11 @@ body {
   font-family: "Heebo", sans-serif;
   font-weight: 100;
   top: 60%;
-  left: 4vh;
+  left: 14vh;
   transition: transform 900ms  ;
 }
 .slider__content p:hover:after {
-  transform: scaleX(-1vh);
+  transform: scaleX(-0.5);
   transition: transform 1200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 .slider__content p:hover:before {
