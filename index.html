@@ -8,6 +8,43 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="./style.css">
 <link rel="shortcut icon" type="image/png" href="picture.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/4.2.2/introjs.min.css" integrity="sha512-631ugrjzlQYCOP9P8BOLEMFspr5ooQwY3rgt8SMUa+QqtVMbY/tniEUOcABHDGjK50VExB4CNc61g5oopGqCEw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  .customTooltip * {
+  font-size: 18px;
+  color: black;
+}
+
+.customTooltip .introjs-tooltip-title {
+  color: #0a41c9;
+}
+.customTooltip .introjs-nextbutton {
+  background: white;
+  border-radius: 12px;
+  border: 2px solid #2412c5;
+}
+  .customTooltip .introjs-nextbutton:hover {
+    color: white;
+    background-color: #121fda;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.customTooltip .introjs-prevbutton {
+  background: white;
+  border-radius: 12px;
+  border: 2px solid #c51212;
+}
+.customTooltip .introjs-prevbutton:hover {
+    color: white;
+    background-color: #e61717;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.customTooltip .introjs-progressbar {
+  color: #bcda12;
+}
+.customTooltip .introjs-bullets {
+  color: black;
+}
+  </style>
 <!-- stonly-widget - copy into the head -->
 <script>var STONLY_WID = "55748e27-305a-11ec-83f1-062882f67cfe";</script>
 <script>
@@ -28,7 +65,7 @@
     </div>
     <div class="slider__inner">
       <div class="slider__content">
-        <h1><a href="https://hioihia123.github.io/1stStory/" target="blank">Slide One</a></h1><b class="go-to-next">NEXT</b>
+        <h1><a href="https://hioihia123.github.io/1stStory/" target="blank" id="step1">Slide One</a></h1><b class="go-to-next" id="step2">NEXT</b>
       </div>
     </div>
   </div>
@@ -58,9 +95,42 @@
 </div>
 <audio id="myAudio" src="YRTH.mp3" preload="auto">
 </audio>
-<a class="sig" onClick="togglePlay()">CLICK HERE TO LISTEN</a>
+<a class="sig" onClick="togglePlay()" id='step3'>CLICK HERE TO LISTEN</a>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="./script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/4.2.2/intro.min.js" integrity="sha512-Q5ZL29wmQV0WWl3+QGBzOFSOwa4e8lOP/o2mYGg13sJR7u5RvnY4yq83W5+ssZ/VmzSBRVX8uGhDIpVSrLBQog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    const intro = introJs();
+    introJs().onbeforeexit(function () {
+    return confirm("Are you sure?");
+})
+    introJs().setOptions({
+    
+    tooltipClass: 'customTooltip',
+    showProgress: true,
+      steps: [{
+        title: 'Welcome',
+        intro: 'Hello World! 👋',
+        position: "bottom"
+      },
+      {
+        element: document.querySelector('#step1'),
+        intro: 'This is where you gonna put the lovely title',
+        position: 'left'
+      },
+    
+      {
+        title: 'Farewell!',
+        element: document.querySelector('#step2'),
+        intro: 'And this is our final step!'
+      },
+      {
+        title:'Farewell',
+        element: document.querySelector('#step3'),
+        intro: 'And this is our final step!'
+      }]
+    }).start();
+    </script>
 <!-- partial -->
 </body>
 </html>
