@@ -101,9 +101,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/4.2.2/intro.min.js" integrity="sha512-Q5ZL29wmQV0WWl3+QGBzOFSOwa4e8lOP/o2mYGg13sJR7u5RvnY4yq83W5+ssZ/VmzSBRVX8uGhDIpVSrLBQog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     const intro = introJs();
-    introJs().onbeforeexit(function () {
-    return confirm("Are you sure?");
-})
     introJs().setOptions({
     
     tooltipClass: 'customTooltip',
@@ -120,14 +117,14 @@
       },
     
       {
-        title: 'Farewell!',
+        title: 'Wanna see more pics ?',
         element: document.querySelector('#step2'),
-        intro: 'And this is our final step!'
+        intro: 'Click here to go to the next pages'
       },
       {
-        title:'Farewell',
+        title:'MUSIC',
         element: document.querySelector('#step3'),
-        intro: 'And this is our final step!'
+        intro: 'Click here to listen to music while browsing'
       }]
     }).start();
     </script>
